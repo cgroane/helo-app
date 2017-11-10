@@ -1,5 +1,3 @@
-// import { request } from "http";
-
 const express = require("express");
 const { json } = require("body-parser");
 const cors = require("cors");
@@ -7,12 +5,9 @@ const session = require("express-session");
 const massive = require("massive");
 const passport = require("passport");
 const Auth0Strategy = require("passport-auth0");
-// const strategy = require('../src/strategy');
 
-// const { dbUser, database } = require("./config").massive;
-// const { secret } = require("./config").session;
 const { domain, clientID, clientSecret } = require("./config.js").passportAuth0;
-const {connectionString} = require('./config').databaseCreds;
+const { connectionString } = require("./config").databaseCreds;
 
 const port = 3001;
 
@@ -22,7 +17,7 @@ app.use(express.static(`${__dirname}/build`));
 
 app.use(
   session({
-    secret: '@nyth!ng y0u w@nT',
+    secret: "@nyth!ng y0u w@nT",
     resave: false,
     saveUninitialized: false
   })
@@ -76,7 +71,7 @@ passport.deserializeUser(function(obj, done) {
 });
 
 app.get(
-  "/login",
+  "/api/login",
   passport.authenticate("auth0", {
     successRedirect: "http://localhost:3000/"
   })

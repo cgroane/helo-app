@@ -1,68 +1,58 @@
 import React, { Component } from "react";
-import {Link} from 'react-router-dom';
-import {connect} from 'react-redux';
-import {requestUser} from './../../ducks/userDashboard';
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { requestUser } from "./../../ducks/userDashboard";
 import "./Dashboard.css";
 
-
 //import other components as necessary
-import Recommended from './Recommended/Recommended';
+import Recommended from "./Recommended/Recommended";
 
 class Dashboard extends Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
+  }
 
+  componentDidmount() {
+    // this.props.requestUser();
+    // this.props.getRecommended();
+  }
 
-    }
+  render() {
+    console.log(this.props);
+    return (
+      // jsx here - you'll want to access user properties with this.props.user.property etc.
+      <div className="Dashboard_parent_container">
+        <div className="Dashboard_child_container">
+          <div className="Dashboard_child_top" />
 
-    componentDidmount() {
-        // this.props.requestUser();
-        // this.props.getRecommended();
-    }
+          <div className="Dashboard_recommended_parent">
+            <div className="Dashboard_recommended_header">
+              <span className="Dashboard_recommended_header_span open-sans">
+                Recommended Friends
+              </span>
 
-    render() {
-        console.log(this.props)
-        return(
-            // jsx here - you'll want to access user properties with this.props.user.property etc.
-            <div className="Dashboard_parent_container" >
-                <div className="Dashboard_child_container" >
+              <span className="Dashboard_recommended_header_select_span open-sans">
+                Sorted by
+              </span>
 
-                    <div className="Dashboard_child_top" >
-                        
-                    </div>
-
-                    <div className="Dashboard_recommended_parent" >
-                        <div className="Dashboard_recommended_header" >
-                            <span className="Dashboard_recommended_header_span open-sans" >
-                                Recommended Friends
-                            </span>
-
-                            <span className="Dashboard_recommended_header_select_span open-sans" >
-                                Sorted by
-                            </span>
-
-                            <select className="Dashboard_recommended_select open-sans" >
-                                <option value="first" >First Name</option>
-                                <option value="last" >Last Name</option>
-                                <option value="gender" >Gender</option>
-                                <option value="hobby" >Hobby</option>
-                                <option value="h_color" >Hair Color</option>
-                                <option value="e_color" >Eye Color</option>
-                                <option value="birthday" >Birthday</option>
-                            </select>
-
-                        </div>
-                        <div className="Dashboard_recommended_users_parent" >
-                            <Recommended/>
-                        </div>
-                    </div>
-
-                </div>
-
-                
+              <select className="Dashboard_recommended_select open-sans">
+                <option value="first">First Name</option>
+                <option value="last">Last Name</option>
+                <option value="gender">Gender</option>
+                <option value="hobby">Hobby</option>
+                <option value="h_color">Hair Color</option>
+                <option value="e_color">Eye Color</option>
+                <option value="birthday">Birthday</option>
+              </select>
             </div>
-        )
-    }
+            <div className="Dashboard_recommended_users_parent">
+              <Recommended />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 // const mapStateToProps = state => {
