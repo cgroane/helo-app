@@ -12,8 +12,8 @@ class Dashboard extends Component {
     super(props);
   }
 
-  componentDidmount() {
-    // this.props.requestUser();
+  componentDidMount() {
+    this.props.requestUser();
     // this.props.getRecommended();
   }
 
@@ -24,6 +24,12 @@ class Dashboard extends Component {
       <div className="Dashboard_parent_container">
         <div className="Dashboard_child_container">
           <div className="Dashboard_child_top" />
+              <div className="User_left">
+                  <img className="User_image" src="https://robohash.org/me"/>
+              </div>
+              <div className="User_right" >
+                  {this.props.user.name}
+              </div>
 
           <div className="Dashboard_recommended_parent">
             <div className="Dashboard_recommended_header">
@@ -55,13 +61,8 @@ class Dashboard extends Component {
   }
 }
 
-// const mapStateToProps = state => {
-//     const {user} = state;
-//     return {
-//         user
-//     }
-// }
+const mapStateToProps = state => state;
 
-export default Dashboard;
+export default connect(mapStateToProps, {requestUser}) (Dashboard); ;
 
-// connect(mapStateToProps, {requestUser})
+

@@ -7,7 +7,7 @@ const passport = require("passport");
 const Auth0Strategy = require("passport-auth0");
 
 const { domain, clientID, clientSecret } = require("./config.js").passportAuth0;
-const { connectionString } = require("./config").databaseCreds;
+const { connectionString } = require("./config.js").databaseCreds;
 
 const port = 3001;
 
