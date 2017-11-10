@@ -23,13 +23,23 @@ class Dashboard extends Component {
       // jsx here - you'll want to access user properties with this.props.user.property etc.
       <div className="Dashboard_parent_container">
         <div className="Dashboard_child_container">
-          <div className="Dashboard_child_top" />
-              <div className="User_left">
-                  <img className="User_image" src="https://robohash.org/me"/>
+          <div className="Dashboard_child_top">
+              
+              <div className="User_container content-container">
+                  <div className="User_left">
+                    <img className="User_image" src="https://robohash.org/me"/>
+                  </div>
+                  <div className="User_right" >
+                      {this.props.user.name}
+                  </div>
               </div>
-              <div className="User_right" >
-                  {this.props.user.name}
+              <div className="Dashboard_onboarding_container content-container" >
+                <span className="open-sans" >
+                Welcome to Helo! Find recommended friends based on your similarities, and even search for them by name. The more you update your profile, the better recommendations we can make!
+                </span>
               </div>
+            </div>
+            
 
           <div className="Dashboard_recommended_parent">
             <div className="Dashboard_recommended_header">
