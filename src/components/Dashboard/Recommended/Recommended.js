@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import {connect} from 'react-redux';
 
-// import {getRecommended} from './../../../ducks/userDashboard';
+import {getRecommended, requestUser} from './../../../ducks/userDashboard';
+
 
 class Recommended extends Component {
     constructor(props) {
@@ -9,15 +11,17 @@ class Recommended extends Component {
     }
 
     componentDidMount() {
-        // this.props.getRecommended();
+        this.props.getRecommended();
+        this.props.requestUser();
     }
     render() {
+        console.log(this.props)
         // const recommendedFriends = map over this.props.recommended 
-        const recommendedFriends = 
-            <div className="Recommended_parent content-container" >
-                <img src=""/>
+        const recommendedFriends = this.props.recommended.map ( (cur, ind) => (
+            <div className="Recommended_parent content-container" key={ind} >
+                <img src="https://robohash.org/me"/>
                 <div className="Recommended_name_container" >
-                    <span>this.props.cur.firstname</span>
+                    <span>{cur.name}</span>
                     <br/>
                     <span className="Recommended_name_container" >this.props.cur.lastname</span>
                     <button className="Recommended_btn orange-btn" >
@@ -25,6 +29,8 @@ class Recommended extends Component {
                     </button>
                 </div>
             </div>
+            )
+        )
 
 
         return (
@@ -37,12 +43,7 @@ class Recommended extends Component {
 
 }
 
-// const mapStateToProps = state => {
-//     const {recommended} = state;
-//     return {
-//         recommended
-//     }
-// }
-export default Recommended;
+const mapStateToProps = state => state;
+export default connect(mapStateToProps, {getRecommended, requestUser}) (Recommended);
 
 // add mapstatetoprops and method to export statement to use redux

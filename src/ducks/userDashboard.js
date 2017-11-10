@@ -33,14 +33,14 @@ export default function userDashboard(state = initialState, action) {
 export function requestUser() {
     return {
         type: REQ_USER,
-        payload: axios.get("/api/auth/setUser").then(response => response.data)
+        payload: axios.get("/api/me").then(response => response.data)
         // check this endpoint with Leah, Kelly
     }
 }
 
-export function getRecommended(user) {
+export function getRecommended() {
     return {
-        type: REQ_USER,
-        payload: axios.get('/api/recommended').then(response => response.data)
+        type: GET_RECOMMENDED,
+        payload: axios.get('/api/test').then(response => response.data)
     }
 }
