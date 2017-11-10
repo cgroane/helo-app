@@ -5,15 +5,11 @@ const session = require("express-session");
 const massive = require("massive");
 const passport = require("passport");
 const Auth0Strategy = require("passport-auth0");
-// const strategy = require('../src/strategy');
 
-const { dbUser, database, connectionString } = require("./config").massive;
-// const { secret } = require("./config").session;
-const { domain, clientID, clientSecret } = require("./config.js").auth0;
+const { domain, clientID, clientSecret } = require("./config.js").passportAuth0;
+const { connectionString } = require("./config").databaseCreds;
 
 const port = 3001;
-// const connectionString = `postgres://wlwxoenezywdkv:3b30dc9cd864b3b7fb55f4b1b48c8a0212e89d66e2522ea481f079f2f7e529d2@ec2-54-243-58-69.compute-1.amazonaws.com:5432/dv05k68kmiqnd`;
-// const connectionString = `postgres://${dbUser}@localhost/${database}`;
 
 const app = express();
 
