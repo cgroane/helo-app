@@ -1,3 +1,5 @@
+// import { request } from "http";
+
 const express = require("express");
 const { json } = require("body-parser");
 const cors = require("cors");
@@ -9,11 +11,10 @@ const Auth0Strategy = require("passport-auth0");
 
 // const { dbUser, database } = require("./config").massive;
 // const { secret } = require("./config").session;
-const { domain, clientID, clientSecret } = require("./config.js");
+const { domain, clientID, clientSecret } = require("./config.js").passportAuth0;
+const {connectionString} = require('./config').databaseCreds;
 
 const port = 3001;
-// const connectionString = `postgres://wlwxoenezywdkv:3b30dc9cd864b3b7fb55f4b1b48c8a0212e89d66e2522ea481f079f2f7e529d2@ec2-54-243-58-69.compute-1.amazonaws.com:5432/dv05k68kmiqnd`;
-// const connectionString = `postgres://${dbUser}@localhost/${database}`;
 
 const app = express();
 
@@ -27,9 +28,9 @@ app.use(
   })
 );
 
-// massive(connectionString)
-//   .then(db => app.set("db", db))
-//   .catch(console.log);
+massive(connectionString)
+  .then(db => app.set("db", db))
+  .catch(console.log);
 
 app.use(json());
 app.use(cors());
