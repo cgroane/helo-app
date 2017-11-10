@@ -10,7 +10,7 @@ class LandingPage extends Component {
   }
 
   handlelogin() {
-    window.location.href = "http:localhost:3001/api/login";
+    window.location.href = "http://localhost:3001/api/login";
     //confirm this links to correct auth0 location
   }
 
@@ -20,7 +20,7 @@ class LandingPage extends Component {
         <div className="wrapper">
           <div className="helo-image-container" />
           <h1 id="landing-title">Helo</h1>
-          <button id="login-button" onclick={this.handlelogin}>
+          <button id="login-button" onClick={this.handlelogin}>
             Login/Register
           </button>
         </div>

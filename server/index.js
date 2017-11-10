@@ -7,9 +7,9 @@ const passport = require("passport");
 const Auth0Strategy = require("passport-auth0");
 // const strategy = require('../src/strategy');
 
-// const { dbUser, database } = require("./config").massive;
+const { dbUser, database, connectionString } = require("./config").massive;
 // const { secret } = require("./config").session;
-const { domain, clientID, clientSecret } = require("./config.js");
+const { domain, clientID, clientSecret } = require("./config.js").auth0;
 
 const port = 3001;
 // const connectionString = `postgres://wlwxoenezywdkv:3b30dc9cd864b3b7fb55f4b1b48c8a0212e89d66e2522ea481f079f2f7e529d2@ec2-54-243-58-69.compute-1.amazonaws.com:5432/dv05k68kmiqnd`;
@@ -21,15 +21,15 @@ app.use(express.static(`${__dirname}/build`));
 
 app.use(
   session({
-    secret: '@nyth!ng y0u w@nT',
+    secret: "@nyth!ng y0u w@nT",
     resave: false,
     saveUninitialized: false
   })
 );
 
-// massive(connectionString)
-//   .then(db => app.set("db", db))
-//   .catch(console.log);
+massive(connectionString)
+  .then(db => app.set("db", db))
+  .catch(console.log);
 
 app.use(json());
 app.use(cors());
@@ -75,7 +75,7 @@ passport.deserializeUser(function(obj, done) {
 });
 
 app.get(
-  "/login",
+  "/api/login",
   passport.authenticate("auth0", {
     successRedirect: "http://localhost:3000/"
   })
