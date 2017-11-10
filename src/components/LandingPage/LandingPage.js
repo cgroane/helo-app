@@ -10,7 +10,7 @@ class LandingPage extends Component {
   }
 
   handlelogin() {
-    window.location.href = "http:localhost:3001/login";
+    window.location.href = "http:localhost:3001/api/login";
     //confirm this links to correct auth0 location
   }
 
