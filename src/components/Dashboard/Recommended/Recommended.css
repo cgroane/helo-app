@@ -1,0 +1,45 @@
+.Recommended_parent {
+    width: 390px;
+    height: 100px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.content-container {
+    background-color: #ffffff;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0, .1),
+                0 1px 2px, 0 rgba(0,0,0, .2);
+}
+
+.Recommended_parent img {
+    width: 100px;
+}
+
+.Recommended_name_container {
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+.open-sans-bold {
+    font-weight: 700;
+    font-family: "Open Sans, sans-serif";
+}
+
+.orange-btn {
+    background-image: radial-gradient((circle at 50% -46%, #ff9770, #ff7a6e));
+    height: 35px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.2);
+    color: #ffffff;
+    border: none;
+    cursor: pointer;    
+}
+.Recommended_btn {
+    position: absolute;
+    right: 20px;
+    width: 100px;
+    
+}
