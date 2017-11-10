@@ -11,8 +11,8 @@ const Auth0Strategy = require("passport-auth0");
 
 // const { dbUser, database } = require("./config").massive;
 // const { secret } = require("./config").session;
-const { domain, clientID, clientSecret } = require("./config.js").passportAuth0;
-const {connectionString} = require('./config').databaseCreds;
+const { domain, clientID, clientSecret } = require("./config.js").auth0;
+const {connectionString} = require('./config').massive;
 
 const port = 3001;
 
