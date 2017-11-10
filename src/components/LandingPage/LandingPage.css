@@ -1,0 +1,58 @@
+.background {
+  background-image: linear-gradient(
+    99deg,
+    #ff70a6,
+    #ff9770 40%,
+    #ffd670 73%,
+    #e9ff70
+  );
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  width: 496px;
+  height: 392px;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 8px;
+  background-image: -webkit-linear-gradient(
+    322deg,
+    rgba(64, 61, 57, 0.1),
+    rgba(255, 255, 255, 0.2)
+  );
+  -webkit-box-shadow: 0 14px 28px 0 rgba(0, 0, 0, 0.25),
+    0 10px 10px 0 rgba(0, 0, 0, 0.26);
+  box-shadow: 0 14px 28px 0 rgba(0, 0, 0, 0.25),
+    0 10px 10px 0 rgba(0, 0, 0, 0.26);
+}
+
+.helo-image-container {
+  background-image: url("./../../images/logo.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+}
+
+#landing-title {
+  margin: 10px;
+  color: white;
+  font-size: 5.8rem;
+}
+
+#login-button {
+  width: 70%;
+  height: 45px;
+  color: white;
+  background-color: #403f39;
+  border: 0;
+  border-radius: 4px;
+  font-size: 1.5rem;
+}
