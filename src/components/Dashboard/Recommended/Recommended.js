@@ -23,7 +23,7 @@ class Recommended extends Component {
                 <div className="Recommended_name_container" >
                     <span>{cur.name}</span>
                     <br/>
-                    <span className="Recommended_name_container" >this.props.cur.lastname</span>
+                    <span className="Recommended_name_container" >{cur.lastname}</span>
                     <button className="Recommended_btn orange-btn" >
                         Add Friend
                     </button>

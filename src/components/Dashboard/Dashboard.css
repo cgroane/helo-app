@@ -79,3 +79,20 @@ select {
     font: 11px system-ui;
 }
 
+.Dashboard_onboarding_container {
+    width: 500px;
+    height: 150px;
+    display: flex;
+    margin-left: 20px;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+.Dashboard_recommended_users_parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    width: 100%;
+}
